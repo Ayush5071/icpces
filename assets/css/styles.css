@@ -1397,6 +1397,13 @@ img.nav-logo,
     color: var(--gray-900);
     margin-bottom: 1rem;
 }
+.workshop-display {
+     text-align: center;
+    padding: 3rem;
+    background: var(--light-purple);
+   
+
+}
 
 .coming-soon-mini {
     font-size: 1.25rem;
