@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Call for Papers - ICPCES 2026</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Playfair+Display:wght@700;900&display=swap');
+        
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        
+        :root {
+            --primary-purple: #6b21a8;
+            --primary-purple-light: #9333ea;
+            --accent-gold: #f59e0b;
+            --white: #ffffff;
+            --gray-700: #3f3f46;
+            --gray-800: #27272a;
+        }
+        
+        body { font-family: 'Poppins', sans-serif; line-height: 1.7; color: var(--gray-700); background: #fff; padding-top: 70px; }
+        img { max-width: 100%; height: auto; display: block; }
+        a { text-decoration: none; color: inherit; transition: 0.3s; }
+        
+        .container { max-width: 1280px; margin: 0 auto; padding: 2rem; }
+        
+        /* Navigation */
+        .navbar { position: fixed; top: 0; width: 100%; background: white; box-shadow: 0 2px 10px rgba(0,0,0,0.1); z-index: 1000; }
+        .nav-container { display: flex; justify-content: space-between; align-items: center; padding: 0.6rem 1.5rem; max-width: 1400px; margin: 0 auto; }
+        .nav-logo { display: flex; align-items: center; gap: 0.75rem; font-weight: 700; font-size: 1.1rem; color: var(--primary-purple); }
+        .nav-logo img { height: 40px; width: auto; }
+        .logo-text { font-family: 'Playfair Display', serif; font-size: 1.1rem; }
+        .logo-year { color: var(--accent-gold); font-size: 1rem; }
+        .nav-menu { display: flex; gap: 1rem; align-items: center; list-style: none; }
+        .nav-link { padding: 0.4rem 0.75rem; color: var(--gray-700); font-weight: 500; font-size: 0.9rem; border-radius: 0.5rem; transition: 0.3s; white-space: nowrap; }
+        .nav-link:hover, .nav-link.active { color: var(--primary-purple); background: rgba(107, 33, 168, 0.1); }
+        .nav-btn { background: linear-gradient(135deg, #6b21a8, #9333ea); color: white; padding: 0.5rem 1.2rem; border-radius: 2rem; font-weight: 600; font-size: 0.85rem; }
+        .nav-btn:hover { transform: translateY(-2px); box-shadow: 0 10px 20px rgba(107, 33, 168, 0.3); }
+        .mobile-toggle { display: none; background: none; border: none; cursor: pointer; flex-direction: column; gap: 4px; padding: 0.5rem; }
+        .mobile-toggle span { width: 22px; height: 2.5px; background: var(--primary-purple); border-radius: 3px; transition: 0.3s; }
+        .nav-dropdown { position: relative; }
+        .dropdown-toggle { display: flex; align-items: center; gap: 0.3rem; cursor: pointer; }
+        .dropdown-menu { position: absolute; top: 100%; left: 0; background: white; box-shadow: 0 4px 20px rgba(0,0,0,0.1); border-radius: 0.5rem; padding: 0.5rem; min-width: 220px; opacity: 0; visibility: hidden; transform: translateY(-10px); transition: 0.3s; }
+        .nav-dropdown:hover .dropdown-menu { opacity: 1; visibility: visible; transform: translateY(0); }
+        .dropdown-menu li a { display: block; padding: 0.6rem 0.9rem; border-radius: 0.375rem; font-size: 0.9rem; }
+        .dropdown-menu li a:hover { background: rgba(107, 33, 168, 0.1); color: var(--primary-purple); }
+        .mobile-logos { display: none; }
+        
+        /* Hero - Hidden */
+        .hero-section { display: none; }
+        
+        /* Content */
+        .section-header { text-align: center; margin: 4rem 0 3rem; }
+        .section-title { font-family: 'Playfair Display', serif; font-size: 2.5rem; color: var(--primary-purple); margin-bottom: 1rem; }
+        .section-divider { height: 4px; width: 80px; background: linear-gradient(90deg, var(--primary-purple), var(--accent-gold)); margin: 0 auto; border-radius: 2px; }
+        
+        .tracks-list { background: rgba(107, 33, 168, 0.05); padding: 2rem; border-radius: 1rem; margin: 2rem 0; }
+        .tracks-list h3 { color: var(--primary-purple); font-size: 1.5rem; margin-bottom: 1rem; }
+        .tracks-list ul { list-style: disc; padding-left: 2rem; }
+        .tracks-list li { margin: 0.75rem 0; }
+        
+        .cfp-contact { background: white; border: 2px solid var(--primary-purple); border-radius: 1rem; padding: 2rem; margin: 2rem 0; }
+        .cfp-contact h3 { color: var(--primary-purple); margin-bottom: 1rem; }
+        .cfp-contact ul { list-style: none; }
+        .cfp-contact li { margin: 0.5rem 0; }
+        .cfp-contact a { color: var(--primary-purple); text-decoration: underline; }
+        
+        .download-cfp { text-align: center; margin: 3rem 0; }
+        .btn-outline { display: inline-block; border: 2px solid var(--primary-purple); color: var(--primary-purple); padding: 1rem 2rem; border-radius: 2rem; font-weight: 600; }
+        .btn-outline:hover { background: var(--primary-purple); color: white; }
+        
+        /* Footer */
+        .footer { background: var(--gray-800); color: white; text-align: center; padding: 2rem; margin-top: 4rem; }
+        
+        @media (max-width: 1024px) {
+            .nav-menu { gap: 0.5rem; }
+            .nav-link { padding: 0.3rem 0.5rem; font-size: 0.85rem; }
+            .nav-btn { padding: 0.4rem 1rem; font-size: 0.8rem; }
+        }
+        
+        @media (max-width: 768px) {
+            body { padding-top: 60px; }
+            .nav-container { padding: 0.5rem 1rem; }
+            .nav-logo { font-size: 1rem; gap: 0.5rem; }
+            .nav-logo img { height: 35px; }
+            .logo-text { font-size: 1rem; }
+            .nav-menu { position: fixed; top: 60px; left: 0; width: 100%; background: white; flex-direction: column; align-items: stretch; gap: 0; padding: 1rem; box-shadow: 0 4px 10px rgba(0,0,0,0.1); display: none; }
+            .nav-menu.active { display: flex; }
+            .nav-link { padding: 0.75rem 1rem; border-radius: 0.375rem; }
+            .nav-btn { margin-top: 0.5rem; text-align: center; }
+            .mobile-toggle { display: flex; }
+            .dropdown-menu { position: static; opacity: 1; visibility: visible; transform: none; box-shadow: none; padding-left: 1rem; margin-top: 0.5rem; }
+            .container { padding: 1.5rem 1rem; }
+            .section-title { font-size: 2rem; }
+        }
+    </style>
+</head>
+<body class="has-hero">
+    <!-- Navigation -->
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <a href="../index.html" class="nav-logo">
+                <img src="../assets/images/logo.png" alt="ICPCES Logo">
+                <span class="logo-text">ICPCES<span class="logo-year">2026</span></span>
+            </a>
+
+            <ul class="nav-menu" id="navMenu">
+                <li><a href="../index.html#home" class="nav-link">Home</a></li>
+                <li><a href="../index.html#about" class="nav-link">About</a></li>
+                <li><a href="call-for-papers.html" class="nav-link active">Call for Papers</a></li>
+                <li><a href="paper-submission.html" class="nav-link">Paper Submission</a></li>
+                <li><a href="../index.html#dates" class="nav-link">Dates</a></li>
+                <li class="nav-dropdown">
+                    <a href="#" class="nav-link dropdown-toggle">Committees <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="../committees/conference-committee.html">Conference Committee</a></li>
+                        <li><a href="../committees/advisory-committee.html">Advisory Committee</a></li>
+                        <li><a href="../committees/technical-program-committee.html">Technical Program Committee</a></li>
+                        <li><a href="../committees/student-committee.html">Student Committee</a></li>
+                    </ul>
+                </li>
+                <li><a href="../index.html#contact" class="nav-link">Contact</a></li>
+                <li><a href="../registration.html" class="nav-btn">Register Now</a></li>
+            </ul>
+
+            <button class="mobile-toggle" id="mobileToggle" aria-label="Toggle menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Mobile logos row -->
+    <div class="mobile-logos">
+        <img src="../assets/images/logo.png" alt="Conference Logo">
+        <img src="../assets/images/springer.jpg" alt="Springer Logo">
+    </div>
+
+<!-- Hero Section -->
+<div class="hero-section">
+    <img src="../assets/images/mnnit.jpg" alt="Conference Slideshow" class="hero-image">
+    <div class="hero-overlay"></div>
+
+    <div class="hero-logos">
+        <img src="../assets/images/logo.png" alt="Conference Logo" class="hero-logo-left">
+        <img src="../assets/images/springer.jpg" alt="Springer Logo" class="hero-logo-right">
+    </div>
+
+    <div class="hero-text">
+        <h1>Call for Papers</h1>
+        <p class="hero-theme">International Conference on Power, Control and Embedded Systems (ICPCES-2026)</p>
+    </div>
+</div>
+
+<div class="container">
+    <div class="section-header">
+        <h2 class="section-title">Call for Papers</h2>
+        <div class="section-divider"></div>
+    </div>
+
+    <p>International Conference on Power, Control and Embedded Systems (ICPCES-2026) is the premier forum for the presentation of new advances and research. The conference will bring together leading researchers, engineers and scientists in the domain of interest from around the world. Topics of interest for submission include, but are not limited to, the following technical tracks:</p>
+
+    <div class="tracks-list">
+        <h3>Tracks</h3>
+        <ul>
+            <li>Signal Processing and Communication Systems</li>
+            <li>VLSI Design, Embedded Systems, and Nanoelectronics</li>
+            <li>Intelligent Transportation and E-Mobility Technologies</li>
+            <li>Industrial and Biomedical Instrumentation & Sensors</li>
+            <li>Artificial Intelligence, Data Analytics, and Intelligent Systems</li>
+            <li>Cybersecurity and Cyber-Physical Systems</li>
+            <li>Aerospace & Avionics Engineering</li>
+            <li>Robotics, Automation, and Industry 5.0</li>
+            <li>Quantum Computing and Emerging Technologies</li>
+        </ul>
+    </div>
+
+    <div class="cfp-contact">
+        <h3>Contact</h3>
+        <p>For queries related to Call for Papers, please contact:</p>
+        <ul>
+            <li>Conference Contact: <a href="mailto:icpces@mnnit.ac.in">icpces@mnnit.ac.in</a></li>
+            <li>Organising Chair: Prof. Richa Negi (<a href="mailto:richa@mnnit.ac.in">richa@mnnit.ac.in</a>)</li>
+            <li>Organising Secretary: Dr. Jagat Jyoti Rath (<a href="mailto:jagat@mnnit.ac.in">jagat@mnnit.ac.in</a>)</li>
+        </ul>
+    </div>
+
+    <div class="download-cfp">
+        <a href="../assets/files/cfp.pdf" class="btn btn-outline" download>Download CFP (PDF)</a>
+    </div>
+</div>
+
+<footer class="footer">
+    <div class="container">
+        <p>&copy; 2026 ICPCES MNNIT. All rights reserved.</p>
+    </div>
+</footer>
+
+<script src="../assets/js/main.js"></script>
+<script>
+    // Mobile menu toggle
+    const mobileToggle = document.getElementById('mobileToggle');
+    const navMenu = document.getElementById('navMenu');
+    
+    if (mobileToggle) {
+        mobileToggle.addEventListener('click', function() {
+            navMenu.classList.toggle('active');
+        });
+    }
+</script>
+</body>
+</html>

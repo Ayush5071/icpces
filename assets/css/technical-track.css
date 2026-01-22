@@ -1,3 +1,9 @@
+/* Ensure bullet points are visible in technical tracks */
+.track-card ul {
+    list-style-type: disc;
+    padding-left: 1.5em;
+    margin-bottom: 1em;
+}
 /* Technical Track Section Styles */
 .technical-track-section {
     min-height: 100vh;
