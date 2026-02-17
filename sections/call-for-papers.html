@@ -53,11 +53,67 @@
         .section-header { text-align: center; margin: 4rem 0 3rem; }
         .section-title { font-family: 'Playfair Display', serif; font-size: 2.5rem; color: var(--primary-purple); margin-bottom: 1rem; }
         .section-divider { height: 4px; width: 80px; background: linear-gradient(90deg, var(--primary-purple), var(--accent-gold)); margin: 0 auto; border-radius: 2px; }
-        
-        .tracks-list { background: rgba(107, 33, 168, 0.05); padding: 2rem; border-radius: 1rem; margin: 2rem 0; }
-        .tracks-list h3 { color: var(--primary-purple); font-size: 1.5rem; margin-bottom: 1rem; }
-        .tracks-list ul { list-style: disc; padding-left: 2rem; }
-        .tracks-list li { margin: 0.75rem 0; }
+
+        .intro-text { font-size: 1rem; color: var(--gray-700); margin-bottom: 2.5rem; line-height: 1.8; }
+
+        /* Tracks Grid */
+        .tracks-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(340px, 1fr)); gap: 1.75rem; margin: 2rem 0 3rem; }
+
+        .track-card {
+            background: #fff;
+            border: 1.5px solid rgba(107, 33, 168, 0.15);
+            border-radius: 1rem;
+            overflow: hidden;
+            transition: transform 0.3s, box-shadow 0.3s;
+            box-shadow: 0 2px 12px rgba(107,33,168,0.06);
+        }
+        .track-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 12px 32px rgba(107,33,168,0.14);
+            border-color: var(--primary-purple-light);
+        }
+
+        .track-header {
+            background: linear-gradient(135deg, var(--primary-purple), var(--primary-purple-light));
+            padding: 1.1rem 1.4rem;
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+        }
+        .track-number {
+            width: 32px; height: 32px;
+            background: rgba(255,255,255,0.2);
+            border-radius: 50%;
+            display: flex; align-items: center; justify-content: center;
+            font-size: 0.8rem; font-weight: 700; color: white;
+            flex-shrink: 0;
+        }
+        .track-title {
+            font-size: 0.95rem;
+            font-weight: 600;
+            color: white;
+            line-height: 1.3;
+        }
+
+        .track-body { padding: 1.2rem 1.4rem; }
+        .track-body ul { list-style: none; padding: 0; }
+        .track-body ul li {
+            padding: 0.35rem 0 0.35rem 1.2rem;
+            position: relative;
+            font-size: 0.875rem;
+            color: var(--gray-700);
+            border-bottom: 1px solid rgba(107,33,168,0.06);
+            line-height: 1.5;
+        }
+        .track-body ul li:last-child { border-bottom: none; }
+        .track-body ul li::before {
+            content: '›';
+            position: absolute;
+            left: 0;
+            color: var(--primary-purple-light);
+            font-weight: 700;
+            font-size: 1rem;
+        }
         
         .cfp-contact { background: white; border: 2px solid var(--primary-purple); border-radius: 1rem; padding: 2rem; margin: 2rem 0; }
         .cfp-contact h3 { color: var(--primary-purple); margin-bottom: 1rem; }
@@ -92,6 +148,7 @@
             .dropdown-menu { position: static; opacity: 1; visibility: visible; transform: none; box-shadow: none; padding-left: 1rem; margin-top: 0.5rem; }
             .container { padding: 1.5rem 1rem; }
             .section-title { font-size: 2rem; }
+            .tracks-grid { grid-template-columns: 1fr; gap: 1.25rem; }
         }
     </style>
 </head>
@@ -141,12 +198,10 @@
 <div class="hero-section">
     <img src="../assets/images/mnnit.jpg" alt="Conference Slideshow" class="hero-image">
     <div class="hero-overlay"></div>
-
     <div class="hero-logos">
         <img src="../assets/images/logo.png" alt="Conference Logo" class="hero-logo-left">
         <img src="../assets/images/springer.jpg" alt="Springer Logo" class="hero-logo-right">
     </div>
-
     <div class="hero-text">
         <h1>Call for Papers</h1>
         <p class="hero-theme">International Conference on Power, Control and Embedded Systems (ICPCES-2026)</p>
@@ -159,22 +214,192 @@
         <div class="section-divider"></div>
     </div>
 
-    <p>International Conference on Power, Control and Embedded Systems (ICPCES-2026) is the premier forum for the presentation of new advances and research. The conference will bring together leading researchers, engineers and scientists in the domain of interest from around the world. Topics of interest for submission include, but are not limited to, the following technical tracks:</p>
+    <p class="intro-text">International Conference on Power, Control and Embedded Systems (ICPCES-2026) is the premier forum for the presentation of new advances and research. The conference will bring together leading researchers, engineers and scientists in the domain of interest from around the world. Topics of interest for submission include, but are not limited to, the following technical tracks:</p>
 
-    <div class="tracks-list">
-        <h3>Tracks</h3>
-        <ul>
-            <li>Signal Processing and Communication Systems</li>
-            <li>VLSI Design, Embedded Systems, and Nanoelectronics</li>
-            <li>Intelligent Transportation and E-Mobility Technologies</li>
-            <li>Industrial and Biomedical Instrumentation & Sensors</li>
-            <li>Artificial Intelligence, Data Analytics, and Intelligent Systems</li>
-            <li>Cybersecurity and Cyber-Physical Systems</li>
-            <li>Aerospace & Avionics Engineering</li>
-            <li>Robotics, Automation, and Industry 5.0</li>
-            <li>Quantum Computing and Emerging Technologies</li>
-        </ul>
-    </div>
+    <!-- Technical Tracks Grid -->
+    <div class="tracks-grid">
+
+        <!-- Track 1 -->
+        <div class="track-card">
+            <div class="track-header">
+                <div class="track-number">1</div>
+                <div class="track-title">Signal Processing and Communication Systems</div>
+            </div>
+            <div class="track-body">
+                <ul>
+                    <li>Analog and digital signal processing</li>
+                    <li>Mixed mode signal processing</li>
+                    <li>Parallel processing</li>
+                    <li>Image &amp; sound processing</li>
+                    <li>Remote sensing</li>
+                    <li>Remote computing systems</li>
+                    <li>Low power VLSI design</li>
+                    <li>VLSI for Communication</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Track 2 -->
+        <div class="track-card">
+            <div class="track-header">
+                <div class="track-number">2</div>
+                <div class="track-title">VLSI Design, Embedded Systems, and Nanoelectronics</div>
+            </div>
+            <div class="track-body">
+                <ul>
+                    <li>Digital and analog VLSI design</li>
+                    <li>System-on-Chip (SoC) and Network-on-Chip (NoC) architectures</li>
+                    <li>Embedded systems and real-time operating systems</li>
+                    <li>Low-power and energy-efficient IC design</li>
+                    <li>MEMS, NEMS, and nanoelectronic devices</li>
+                    <li>FPGA-based system design and prototyping</li>
+                    <li>Hardware–software co-design</li>
+                    <li>Emerging semiconductor materials and technologies</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Track 3 -->
+        <div class="track-card">
+            <div class="track-header">
+                <div class="track-number">3</div>
+                <div class="track-title">Intelligent Transportation and E-Mobility Technologies</div>
+            </div>
+            <div class="track-body">
+                <ul>
+                    <li>Autonomous and connected vehicle technologies</li>
+                    <li>Electric and hybrid vehicle powertrains</li>
+                    <li>Battery management systems and energy storage</li>
+                    <li>Vehicle-to-Everything (V2X) communication</li>
+                    <li>Intelligent traffic management and smart infrastructure</li>
+                    <li>Advanced driver assistance systems (ADAS)</li>
+                    <li>Sustainable mobility and smart transportation planning</li>
+                    <li>Transportation cyber-physical systems</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Track 4 -->
+        <div class="track-card">
+            <div class="track-header">
+                <div class="track-number">4</div>
+                <div class="track-title">Industrial and Biomedical Instrumentation &amp; Sensors</div>
+            </div>
+            <div class="track-body">
+                <ul>
+                    <li>Smart sensors and sensor fusion</li>
+                    <li>Industrial automation and process instrumentation</li>
+                    <li>Biomedical signal acquisition and processing</li>
+                    <li>Wearable and implantable medical devices</li>
+                    <li>IoT-enabled instrumentation systems</li>
+                    <li>Non-destructive testing and evaluation</li>
+                    <li>Precision measurement and calibration techniques</li>
+                    <li>Condition monitoring and predictive maintenance</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Track 5 -->
+        <div class="track-card">
+            <div class="track-header">
+                <div class="track-number">5</div>
+                <div class="track-title">Artificial Intelligence, Data Analytics, and Intelligent Systems</div>
+            </div>
+            <div class="track-body">
+                <ul>
+                    <li>Machine learning and deep learning algorithms</li>
+                    <li>Explainable AI and trustworthy AI systems</li>
+                    <li>Big data analytics and cloud intelligence</li>
+                    <li>Edge AI and embedded intelligence</li>
+                    <li>Computer vision and pattern recognition</li>
+                    <li>Natural language processing and speech systems</li>
+                    <li>AI for healthcare, energy, and smart cities</li>
+                    <li>Reinforcement learning and adaptive systems</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Track 6 -->
+        <div class="track-card">
+            <div class="track-header">
+                <div class="track-number">6</div>
+                <div class="track-title">Cybersecurity and Cyber-Physical Systems</div>
+            </div>
+            <div class="track-body">
+                <ul>
+                    <li>Secure control and estimation</li>
+                    <li>Intrusion detection and attack-resilient systems</li>
+                    <li>Cryptography and secure communication protocols</li>
+                    <li>Cyber-physical system modeling and analysis</li>
+                    <li>IoT and industrial cybersecurity</li>
+                    <li>Blockchain for secure systems</li>
+                    <li>Privacy-preserving computation</li>
+                    <li>Resilient smart grids and infrastructure security</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Track 7 -->
+        <div class="track-card">
+            <div class="track-header">
+                <div class="track-number">7</div>
+                <div class="track-title">Aerospace &amp; Avionics Engineering</div>
+            </div>
+            <div class="track-body">
+                <ul>
+                    <li>Avionics systems and flight control</li>
+                    <li>Navigation, guidance, and control (NGC)</li>
+                    <li>UAVs and unmanned aerial systems</li>
+                    <li>Satellite communication and space systems</li>
+                    <li>Aerospace sensors and instrumentation</li>
+                    <li>Fault-tolerant and safety-critical systems</li>
+                    <li>AI in aerospace applications</li>
+                    <li>Space robotics and autonomous missions</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Track 8 -->
+        <div class="track-card">
+            <div class="track-header">
+                <div class="track-number">8</div>
+                <div class="track-title">Robotics, Automation, and Industry 5.0</div>
+            </div>
+            <div class="track-body">
+                <ul>
+                    <li>Autonomous robots and multi-robot systems</li>
+                    <li>Human–robot collaboration</li>
+                    <li>Industrial automation and smart manufacturing</li>
+                    <li>Digital twins and cyber-physical production systems</li>
+                    <li>Intelligent control and motion planning</li>
+                    <li>Soft robotics and bio-inspired systems</li>
+                    <li>Collaborative AI for Industry 5.0</li>
+                    <li>Sustainable and resilient manufacturing systems</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Track 9 -->
+        <div class="track-card">
+            <div class="track-header">
+                <div class="track-number">9</div>
+                <div class="track-title">Quantum Computing and Emerging Technologies</div>
+            </div>
+            <div class="track-body">
+                <ul>
+                    <li>Quantum algorithms and information processing</li>
+                    <li>Quantum communication and cryptography</li>
+                    <li>Quantum hardware and device technologies</li>
+                    <li>Neuromorphic and brain-inspired computing</li>
+                    <li>Spintronics and photonic computing</li>
+                    <li>Terahertz devices and systems</li>
+                    <li>AI–quantum hybrid systems</li>
+                    <li>Emerging materials and post-CMOS technologies</li>
+                </ul>
+            </div>
+        </div>
+
+    </div><!-- end .tracks-grid -->
 
     <div class="cfp-contact">
         <h3>Contact</h3>
@@ -187,7 +412,7 @@
     </div>
 
     <div class="download-cfp">
-        <a href="../assets/files/cfp.pdf" class="btn btn-outline" download>Download CFP (PDF)</a>
+        <a href="../assets/files/Brouchure.pdf" class="btn btn-outline" download>Download CFP (PDF)</a>
     </div>
 </div>
 
