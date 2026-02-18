@@ -370,7 +370,7 @@ document.addEventListener('DOMContentLoaded', function() {
         visibility: hidden;
         transform: translateY(20px);
         transition: all 0.3s ease;
-        z-index: 999;
+        z-index: 10001;
     `;
     
     document.body.appendChild(backToTopBtn);
