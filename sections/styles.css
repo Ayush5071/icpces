@@ -473,12 +473,19 @@ img.nav-logo,
     padding: 0.5rem;
 }
 
+/* extra sizing for IEEE logo to make it stand out */
+.hero-logo.ieee-logo {
+    height: 90px;
+}
+
+
 .springer-logo {
     height: 70px;
 }
-
-.hero-badge {
-    display: inline-block;
+    /* smaller size on mobile for the added IEEE logo */
+    .hero-logo.ieee-logo {
+        height: 70px;
+    }
     padding: 0.5rem 1.5rem;
     background: var(--accent-gold);
     color: var(--gray-900);

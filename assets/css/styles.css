@@ -468,11 +468,22 @@ img.nav-logo,
 }
 
 .hero-logo {
+    /* default size for hero logos; some variants override this */
     height: 80px;
     width: auto;
     background: rgba(255, 255, 255, 0.9);
     border-radius: var(--radius-lg);
     padding: 0.5rem;
+}
+
+/* conference logo slightly larger for visual emphasis */
+.hero-logo-left {
+    height: 100px;
+}
+
+/* IEEE logo kept a bit smaller to balance */
+.hero-logo.ieee-logo {
+    height: 80px;
 }
 
 .springer-logo {
@@ -674,6 +685,12 @@ img.nav-logo,
     }
     
     .hero-logo {
+        height: 60px;
+    }
+    .hero-logo-left {
+        height: 70px;
+    }
+    .hero-logo.ieee-logo {
         height: 60px;
     }
     
