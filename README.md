@@ -103,3 +103,4 @@ To add more pages (Registration, Committee pages, etc.):
 ## Credits
 
 Developed and Managed by [Ayush Tiwari](http://ayush-delta.vercel.app/)
+updating
