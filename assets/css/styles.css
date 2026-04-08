@@ -1617,6 +1617,34 @@ img.nav-logo,
     color: var(--primary-purple-dark);
 }
 
+.contact-common {
+    margin-top: 1.75rem;
+    padding: 1.25rem 1.5rem;
+    border-radius: var(--radius-lg);
+    background: var(--white);
+    box-shadow: var(--shadow-lg);
+    text-align: center;
+}
+
+.contact-common h3 {
+    margin-bottom: 0.35rem;
+    color: var(--gray-900);
+    font-size: 1.1rem;
+}
+
+.contact-common p {
+    color: var(--gray-700);
+}
+
+.contact-common a {
+    color: var(--primary-purple);
+    font-weight: 600;
+}
+
+.contact-common a:hover {
+    color: var(--primary-purple-dark);
+}
+
 .venue-text {
     color: var(--gray-600);
     line-height: 1.8;
