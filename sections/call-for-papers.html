@@ -56,6 +56,104 @@
 
         .intro-text { font-size: 1rem; color: var(--gray-700); margin-bottom: 2.5rem; line-height: 1.8; }
 
+        .special-sessions-section {
+            margin: 3.5rem 0 2rem;
+            padding-top: 2rem;
+            border-top: 1px solid rgba(107, 33, 168, 0.12);
+        }
+
+        .special-sessions-heading {
+            font-family: 'Playfair Display', serif;
+            font-size: 2rem;
+            color: var(--primary-purple);
+            margin-bottom: 1rem;
+        }
+
+        .special-sessions-tabs {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.75rem;
+            margin: 1.5rem 0;
+        }
+
+        .session-tab {
+            appearance: none;
+            border: 1px solid rgba(107, 33, 168, 0.18);
+            background: rgba(107, 33, 168, 0.04);
+            color: var(--gray-700);
+            padding: 0.8rem 1rem;
+            border-radius: 9999px;
+            font: inherit;
+            font-weight: 600;
+            cursor: pointer;
+            transition: 0.3s ease;
+        }
+
+        .session-tab:hover,
+        .session-tab.active {
+            background: linear-gradient(135deg, #6b21a8, #9333ea);
+            color: #fff;
+            border-color: transparent;
+            box-shadow: 0 10px 20px rgba(107, 33, 168, 0.18);
+        }
+
+        .session-panel {
+            display: none;
+            background: #fff;
+            border: 1px solid rgba(107, 33, 168, 0.12);
+            border-radius: 1rem;
+            padding: 1.5rem;
+            box-shadow: 0 10px 25px rgba(107, 33, 168, 0.05);
+        }
+
+        .session-panel.active {
+            display: block;
+        }
+
+        .session-panel h4 {
+            color: var(--primary-purple);
+            font-size: 1.3rem;
+            margin-bottom: 0.75rem;
+        }
+
+        .session-block {
+            margin-top: 1.15rem;
+        }
+
+        .session-block h5 {
+            font-size: 1rem;
+            color: var(--gray-800);
+            margin-bottom: 0.5rem;
+        }
+
+        .session-topics {
+            margin-top: 0.5rem;
+            list-style: decimal;
+            padding-left: 1.25rem;
+        }
+
+        .session-topics li {
+            margin: 0.45rem 0;
+        }
+
+        .organizer-list {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        .organizer-list li {
+            margin: 0.75rem 0 0;
+            padding: 0.85rem 1rem;
+            border-radius: 0.75rem;
+            background: rgba(243, 232, 255, 0.65);
+            border: 1px solid rgba(107, 33, 168, 0.08);
+        }
+
+        .organizer-list strong {
+            display: block;
+            margin-bottom: 0.25rem;
+        }
+
         /* Tracks Grid */
         .tracks-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(340px, 1fr)); gap: 1.75rem; margin: 2rem 0 3rem; }
 
@@ -449,6 +547,123 @@
 
     </div><!-- end .tracks-grid -->
 
+    <div class="special-sessions-section">
+        <h3 class="special-sessions-heading">Special Sessions</h3>
+        
+        <div class="special-sessions-tabs" role="tablist" aria-label="Special Sessions">
+            <button class="session-tab active" type="button" role="tab" aria-selected="true" aria-controls="session-tab-1" id="session-tab-button-1" data-session-tab="session-tab-1">AI-Driven Optimization and Control in Integrated Energy Systems and Cognitive Wireless Networks for Smart and Sustainable Grids</button>
+            <button class="session-tab" type="button" role="tab" aria-selected="false" aria-controls="session-tab-2" id="session-tab-button-2" data-session-tab="session-tab-2">Next-Generation IoT Networks: 6G, AI, Security, and Smart Applications</button>
+        </div>
+
+        <div class="session-panel active" id="session-tab-1" role="tabpanel" aria-labelledby="session-tab-button-1">
+            <h4>AI-Driven Optimization and Control in Integrated Energy Systems and Cognitive Wireless Networks for Smart and Sustainable Grids</h4>
+            <p>The rapid transition toward sustainable and intelligent infrastructure has created a strong demand for integrated solutions that combine advanced energy management with reliable and adaptive communication technologies. This special session aims to provide a focused platform for researchers, academicians, industry professionals, and practitioners to discuss emerging innovations, challenges, and practical implementations in this multidisciplinary domain. Modern power and energy systems are increasingly characterized by the integration of renewable energy resources, distributed generation, electric vehicles, energy storage systems, and smart grid technologies. At the same time, the growing deployment of Internet of Things (IoT) devices, wireless sensor networks, and intelligent communication infrastructures has transformed conventional grids into interconnected cyber-physical systems. Efficient coordination among these diverse components requires advanced optimization, intelligent control strategies, and adaptive communication mechanisms capable of handling dynamic operating conditions, uncertainty, and real-time decision-making.</p>
+            <p>This special session primarily focuses on the application of Artificial Intelligence (AI), Machine Learning (ML), Deep Learning (DL), Reinforcement Learning (RL), and computational intelligence techniques for the optimization, monitoring, and control of integrated energy systems and cognitive wireless communication networks. The session seeks to highlight innovative approaches that improve energy efficiency, grid reliability, communication robustness, operational flexibility, and sustainability in future smart grids.</p>
+
+            <div class="session-block">
+                <h5>Key Objectives</h5>
+                <ul>
+                    <li>To promote interdisciplinary research integrating smart energy systems with advanced wireless communication technologies.</li>
+                    <li>To explore AI-enabled optimization and control methodologies for modern power systems and smart grids.</li>
+                    <li>To discuss intelligent communication frameworks for reliable and low-latency energy management applications.</li>
+                    <li>To encourage the development of resilient, secure, and sustainable cyber-physical energy infrastructures.</li>
+                    <li>To provide a collaborative platform for academia and industry to exchange recent advancements, practical experiences, and future research directions.</li>
+                </ul>
+            </div>
+
+            <div class="session-block">
+                <h5>Topics to be Covered</h5>
+                <ul class="session-topics">
+                    <li>AI/ML applications in power system optimization and control</li>
+                    <li>Integrated energy systems modelling and smart energy management</li>
+                    <li>Renewable energy integration and forecasting</li>
+                    <li>Smart grid communication architectures and protocols</li>
+                    <li>Cellular networks (5G/6G) for smart grid applications</li>
+                    <li>Wireless sensor networks and IoT in energy systems</li>
+                    <li>Cyber-physical energy systems and digital twins</li>
+                    <li>Demand response and distributed energy resource coordination</li>
+                    <li>Energy-efficient communication in smart grids</li>
+                    <li>Electric vehicle integration and vehicle-to-grid communication</li>
+                    <li>Secure and resilient communication for power systems</li>
+                    <li>MIMO and OFDM</li>
+                    <li>Big Data Analytics and Cybersecurity for the power system</li>
+                </ul>
+            </div>
+
+            <div class="session-block">
+                <h5>Organizers</h5>
+                <ul class="organizer-list">
+                    <li>
+                        <strong>Dr. Nirban Chakraborty</strong>
+                        Assistant Professor, Department of Electrical &amp; Electrical Engineering, Institute of Engineering &amp; Management (IEM), Kolkata, India<br>
+                        Email: nirban.chakraborty@iem.edu.in<br>
+                        Contact: +91-9832326307
+                    </li>
+                    <li>
+                        <strong>Dr. Arpita Mandal</strong>
+                        Assistant Professor, Department of Electronics &amp; Communication Engineering, MVJ College of Engineering, Bangalore, India<br>
+                        Email: Arpita.Mandal@mvjce.edu.in<br>
+                        Contact: +91-8240812852
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="session-panel" id="session-tab-2" role="tabpanel" aria-labelledby="session-tab-button-2">
+            <h4>Next-Generation IoT Networks: 6G, AI, Security, and Smart Applications</h4>
+            <p>The rapid advancement of Internet of Things (IoT) technologies, Artificial Intelligence (AI), machine learning, 6G communications, and cyber-physical systems is transforming modern applications across healthcare, agriculture, transportation, industrial automation, and sustainable energy systems. The emergence of intelligent connected devices and low-power communication technologies has created new opportunities for real-time monitoring, predictive analytics, autonomous decision-making, and efficient resource utilization.</p>
+            <p>With the growing deployment of IoT-enabled smart systems, several critical challenges related to reliability, scalability, cybersecurity, interoperability, energy efficiency, and data-driven intelligence have also emerged. Advanced technologies such as BLE/LoRa-based IoT systems, semantic communications, edge intelligence, digital twins, and AI-enabled analytics are playing a significant role in addressing these challenges and enabling next-generation intelligent infrastructures. The proposed special session aims to provide a multidisciplinary platform for researchers, academicians, industry experts, and practitioners to present recent advances, innovations, and practical solutions in intelligent IoT ecosystems. The session intends to encourage high-quality research contributions focusing on smart healthcare, industrial IoT, smart agriculture, vehicular networks, non-terrestrial networks, remote patient monitoring, disease surveillance, intelligent energy systems, and AI-driven IoT applications.</p>
+            <p>The special session will promote interdisciplinary collaboration, facilitate knowledge exchange between academia and industry, and identify emerging research directions for secure, sustainable, and intelligent IoT-enabled systems supporting future smart societies.</p>
+
+            <div class="session-block">
+                <h5>Topics to be Covered</h5>
+                <ul class="session-topics">
+                    <li>6G and Internet of Things (IoT)</li>
+                    <li>BLE and LoRa-Based IoT Systems</li>
+                    <li>IoT-Enabled Semantic Communications</li>
+                    <li>Wide Area IoT Sensor Networks</li>
+                    <li>Design Automation for IoT Devices</li>
+                    <li>IoT Solutions for Smart Agriculture</li>
+                    <li>Reliability, Cybersecurity, Authentication, and Security in IoT Systems</li>
+                    <li>Signal Processing Techniques for IoT Applications</li>
+                    <li>IoT-Enabled Vehicular Networks and Traffic Management Systems</li>
+                    <li>IoT-Driven Digital Twin Models</li>
+                    <li>Non-Terrestrial Network (NTN) NB-IoT Solutions</li>
+                    <li>IoT-Enabled Smart Healthcare and Industrial IoT</li>
+                    <li>Personalized Medicine and IoT-Driven Biomedical Data Analytics</li>
+                    <li>IoT Solutions for Smart Hospitals and Remote Patient Management</li>
+                    <li>IoT-Enabled Disease Monitoring and Surveillance Systems</li>
+                    <li>Artificial Intelligence and Machine Learning Technologies for IoT</li>
+                    <li>IoT-Driven Innovations in Power Electronics and Energy Systems</li>
+                </ul>
+            </div>
+
+            <div class="session-block">
+                <h5>Organizers</h5>
+                <ul class="organizer-list">
+                    <li>
+                        <strong>Dr. Sachin Kadam</strong>
+                        ECED, MNNIT Allahabad<br>
+                        Email: sachink@mnnit.ac.in<br>
+                        Contact: 9967335454
+                    </li>
+                    <li>
+                        <strong>Dr. Shishir Maheshwari</strong>
+                        ECED, MNNIT Allahabad<br>
+                        Email: shishirm@mnnit.ac.in<br>
+                        Contact: 9806109096
+                    </li>
+                    <li>
+                        <strong>Dr. Vaibhav Kumar Gupta</strong>
+                        Dept. of ECE, LNMIIT Jaipur<br>
+                        Email: vaibhav.gupta@lnmiit.ac.in<br>
+                        Contact: 9769801913
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
     <div class="cfp-contact">
         <h3>Contact</h3>
         <p>For queries related to Call for Papers, please contact:</p>
@@ -481,6 +696,25 @@
             navMenu.classList.toggle('active');
         });
     }
+
+    const sessionTabs = document.querySelectorAll('.session-tab');
+    const sessionPanels = document.querySelectorAll('.session-panel');
+
+    sessionTabs.forEach((tab) => {
+        tab.addEventListener('click', function() {
+            const targetId = this.getAttribute('data-session-tab');
+
+            sessionTabs.forEach((item) => {
+                const isSelected = item === this;
+                item.classList.toggle('active', isSelected);
+                item.setAttribute('aria-selected', isSelected ? 'true' : 'false');
+            });
+
+            sessionPanels.forEach((panel) => {
+                panel.classList.toggle('active', panel.id === targetId);
+            });
+        });
+    });
 </script>
 </body>
 </html>
