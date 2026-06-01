@@ -45,3 +45,65 @@
     line-height: 1.55;
     font-size: 1.35rem;
 }
+
+.committee-page .honorary-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 1.5rem;
+    max-width: 980px;
+    align-items: stretch;
+}
+
+.committee-page .honorary-card {
+    margin-bottom: 0;
+    padding: 1.5rem 1.25rem 1.35rem;
+    border: 1px solid #e9d5ff;
+    border-radius: 1.25rem;
+    background: linear-gradient(180deg, #ffffff 0%, #fdf9ff 100%);
+    box-shadow: 0 12px 30px rgba(107, 33, 168, 0.08);
+    text-align: center;
+}
+
+.committee-page .honorary-card img {
+    width: 100%;
+    max-width: 180px;
+    aspect-ratio: 3 / 4;
+    object-fit: cover;
+    object-position: center top;
+    margin: 0 auto 1rem;
+    border-radius: 1rem;
+    box-shadow: 0 8px 24px rgba(24, 24, 27, 0.12);
+}
+
+.committee-page .honorary-card-body h2 {
+    font-size: 1.55rem;
+    line-height: 1.25;
+    margin-bottom: 0.75rem;
+    color: #5b21b6;
+}
+
+.committee-page .honorary-card-body p {
+    font-size: 1.05rem;
+    line-height: 1.7;
+    margin: 0;
+    color: #3f3f46;
+}
+
+@media (max-width: 640px) {
+    .committee-page .honorary-grid {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+
+    .committee-page .honorary-card {
+        padding: 1.25rem 1rem 1.1rem;
+    }
+
+    .committee-page .honorary-card-body h2 {
+        font-size: 1.35rem;
+    }
+
+    .committee-page .honorary-card-body p {
+        font-size: 1rem;
+    }
+}
