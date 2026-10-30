@@ -10,73 +10,6 @@
     <link rel="stylesheet" href="./assets/css/styles.css">
 </head>
 <body class="has-hero">
-    <!-- Top Announcement Bar - Paper Submission Deadline -->
-  
-        <div id="paper-submission-bar" style="position:fixed;top:70px;left:0;width:100vw;z-index:998;background:linear-gradient(90deg,#1a237e 60%,#3949ab 100%);color:#fff;font-family:'Poppins',sans-serif;font-size:1.05rem;box-shadow:0 2px 8px rgba(26,35,126,0.12);padding:0;">
-    <div class="anrf-sponsor-marquee" aria-label="Conference sponsored by ANRF, Government of India, New Delhi">
-        <div id="anrf-sponsor-content" class="anrf-sponsor-track">
-            <span id="anrf-sponsor-text" class="anrf-sponsor-item"><img src="./assets/public/anrf.png" alt="ANRF logo">Sponsored by ANRF, Government of India, New Delhi</span>
-        </div>
-    </div>
-    <div id="paper-submission-content" style="white-space:nowrap;overflow:hidden;width:100vw;">
-                <span id="paper-submission-text" style="display:inline-block;padding:0.6rem 0;min-width:100vw;line-height:1.2;text-align:center;">
-                            <span style="display:block;font-size:1.45rem;font-weight:800;letter-spacing:0.2px;">
-                                Acceptance Notification: By September 25th, 2026
-                            </span>
-                            <span style="display:block;font-size:0.95rem;font-weight:500;opacity:0.95;margin-top:0.25rem;">
-                                Registration Opens: September 26th, 2026
-                            </span>
-        </span>
-    </div>
-</div>
-    <script>
-    (function () {
-        const topBar = document.getElementById('paper-submission-bar');
-        const topContent = document.getElementById('paper-submission-content');
-        const topText = document.getElementById('paper-submission-text');
-        const sponsorContent = document.getElementById('anrf-sponsor-content');
-        const sponsorText = document.getElementById('anrf-sponsor-text');
-        let topScroll = 0;
-        let sponsorScroll = 0;
-        const topTextWidth = topText.offsetWidth;
-        const sponsorTextWidth = sponsorText.offsetWidth;
-        const topClone = topText.cloneNode(true);
-        const sponsorClone = sponsorText.cloneNode(true);
-        topClone.style.marginLeft = '2rem';
-        sponsorClone.style.marginLeft = '2rem';
-        sponsorClone.setAttribute('aria-hidden', 'true');
-        topContent.appendChild(topClone);
-        sponsorContent.appendChild(sponsorClone);
-
-        function animateTopScroll() {
-            topScroll -= 1.1;
-            if (Math.abs(topScroll) >= topTextWidth + 32) {
-                topScroll = 0;
-            }
-            topContent.scrollLeft = Math.abs(topScroll);
-            requestAnimationFrame(animateTopScroll);
-        }
-        animateTopScroll();
-
-        function animateSponsorScroll() {
-            sponsorScroll -= 1.1;
-            if (Math.abs(sponsorScroll) >= sponsorTextWidth + 32) {
-                sponsorScroll = 0;
-            }
-            sponsorContent.scrollLeft = Math.abs(sponsorScroll);
-            requestAnimationFrame(animateSponsorScroll);
-        }
-        animateSponsorScroll();
-
-        function adjustLayoutForPaperBar() {
-            const barHeight = topBar.offsetHeight;
-            document.body.style.paddingTop = barHeight + 'px';
-        }
-        adjustLayoutForPaperBar();
-        window.addEventListener('resize', adjustLayoutForPaperBar);
-    })();
-    </script>
-
     <!-- Navigation -->
     <nav class="navbar" id="navbar">
         <div class="nav-container">
@@ -131,6 +64,7 @@
             <!-- logo row added for homepage hero -->
             <div class="hero-logos">
                 <img src="./assets/images/logo.png" alt="Conference Logo" class="hero-logo-left">
+                <img src="./assets/public/anrf.png" alt="ANRF Logo" class="hero-logo anrf-logo">
                 <img src="./assets/public/ieee.jpeg" alt="IEEE Logo" class="hero-logo ieee-logo">
             </div>
                         
@@ -569,6 +503,10 @@
                         <li><a href="http://www.mnnit.ac.in/" target="_blank">MNNIT Allahabad</a></li>
                         <li><a href="https://www.ieee.org/" target="_blank">IEEE</a></li>
                     </ul>
+                </div>
+
+                <div class="footer-sponsor">
+                    <img src="./assets/public/anrf.png" alt="ANRF Logo">
                 </div>
                 
 

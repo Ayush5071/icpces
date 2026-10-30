@@ -531,6 +531,10 @@ img.nav-logo,
     height: 80px;
 }
 
+.hero-logo.anrf-logo {
+    height: 80px;
+}
+
 .springer-logo {
     height: 70px;
 }
@@ -1765,6 +1769,20 @@ img.nav-logo,
     color: var(--accent-gold);
 }
 
+.footer-sponsor {
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+}
+
+.footer-sponsor img {
+    width: min(150px, 100%);
+    height: auto;
+    background: var(--white);
+    border-radius: var(--radius-md);
+    padding: 0.75rem;
+}
+
 .footer-bottom {
     padding-top: 2rem;
     display: flex;
@@ -1803,6 +1821,10 @@ img.nav-logo,
     .footer-logo {
         margin: 0 auto 1rem;
     }
+
+    .footer-sponsor {
+        grid-column: span 2;
+    }
 }
 
 @media (max-width: 640px) {
@@ -1812,6 +1834,10 @@ img.nav-logo,
     }
     
     .footer-brand {
+        grid-column: span 1;
+    }
+
+    .footer-sponsor {
         grid-column: span 1;
     }
     
