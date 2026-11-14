@@ -566,11 +566,9 @@ img.nav-logo,
 .speaker-carousel {
     position: relative;
     z-index: 2;
-    padding: 3rem 1rem 1.75rem;
+    padding: 1rem 1rem 1.25rem;
     border-block: 1px solid rgba(107, 33, 168, 0.18);
-    background:
-        linear-gradient(110deg, rgba(255, 247, 237, 0.98), rgba(250, 245, 255, 0.96)),
-        var(--gradient-purple);
+    background: #fff;
     color: var(--primary-purple-dark);
 }
 
@@ -597,7 +595,7 @@ img.nav-logo,
 .speaker-carousel-viewport {
     width: 100%;
     max-width: 1500px;
-    min-height: 480px;
+    min-height: 620px;
     margin: 0 auto;
     overflow: hidden;
 }
@@ -610,35 +608,36 @@ img.nav-logo,
 .speaker-slide {
     display: flex;
     flex: 0 0 100%;
+    flex-direction: column;
     align-items: center;
-    justify-content: space-between;
-    gap: clamp(2.5rem, 6vw, 6rem);
-    min-height: 480px;
+    justify-content: center;
+    gap: 1rem;
+    min-height: 620px;
     padding: 2rem 8vw;
     border: 1px solid rgba(15, 118, 110, 0.18);
     border-radius: 0.5rem;
-    background:
-        linear-gradient(90deg, rgba(6, 95, 70, 0.98) 0%, rgba(9, 119, 111, 0.98) 57%, rgba(239, 246, 255, 0.98) 57%),
-        var(--gradient-purple);
+    background: #fff;
     box-shadow: var(--shadow-lg);
 }
 
 .speaker-slide img {
-    order: 2;
-    width: 280px;
-    height: 280px;
-    flex: 0 0 280px;
-    border: 8px solid #fff;
+    order: 1;
+    width: 190px;
+    height: 190px;
+    flex: 0 0 190px;
+    border: 0;
     border-radius: 50%;
     object-fit: cover;
-    box-shadow: var(--shadow-lg);
+    box-shadow: none;
 }
 
 .speaker-slide-content {
-    order: 1;
+    order: 2;
     min-width: 0;
-    max-width: 58%;
-    color: #fff;
+    width: 100%;
+    max-width: 1000px;
+    color: var(--primary-purple-dark);
+    text-align: center;
 }
 
 .speaker-slide-label {
@@ -653,7 +652,7 @@ img.nav-logo,
 
 .speaker-slide h2 {
     margin: 0;
-    color: #fff;
+    color: #7030a0;
     font-family: var(--font-display);
     font-size: clamp(2.2rem, 4.5vw, 4.2rem);
     line-height: 1.25;
@@ -664,13 +663,17 @@ img.nav-logo,
     display: block;
     max-width: 1000px;
     margin: 0.45rem 0 0;
-    color: rgba(255, 255, 255, 0.92);
+    color: #7030a0;
+    font-style: italic;
+    font-weight: 600;
     font-size: clamp(1.05rem, 1.8vw, 1.5rem);
     line-height: 1.4;
 }
 
 .speaker-slide small {
-    color: rgba(255, 255, 255, 0.78);
+    color: #111;
+    font-style: normal;
+    font-weight: 700;
     font-size: clamp(0.9rem, 1.3vw, 1.15rem);
 }
 
@@ -2093,44 +2096,50 @@ button:focus {
 
 @media (max-width: 640px) {
     .speaker-carousel {
-        padding-top: 1.5rem;
+        padding: 0.5rem 0.5rem 0.75rem;
     }
 
     .speaker-highlight-heading {
-        margin-bottom: 0.5rem;
+        margin-bottom: 0.7rem;
+    }
+
+    .speaker-carousel-viewport {
+        min-height: 0;
     }
 
     .speaker-slide {
-        align-items: flex-start;
-        gap: 0.8rem;
-        min-height: 250px;
-        padding: 0.75rem 1rem;
-        background:
-            linear-gradient(90deg, rgba(6, 95, 70, 0.98) 0%, rgba(9, 119, 111, 0.98) 52%, rgba(239, 246, 255, 0.98) 52%);
+        gap: 0.55rem;
+        min-height: 440px;
+        padding: 1.25rem 1rem 1rem;
+        border: 0;
+        box-shadow: none;
     }
 
     .speaker-slide img {
-        order: 2;
-        width: 72px;
-        height: 72px;
-        flex-basis: 72px;
+        order: 1;
+        width: 125px;
+        height: 125px;
+        flex-basis: 125px;
     }
 
     .speaker-slide-content {
-        order: 1;
-        max-width: calc(100% - 85px);
+        order: 2;
+        max-width: 100%;
     }
 
     .speaker-slide h2 {
-        font-size: 1rem;
+        font-size: 1.65rem;
+        line-height: 1.2;
     }
 
     .speaker-slide p {
-        font-size: 0.72rem;
+        font-size: 0.95rem;
+        line-height: 1.4;
     }
 
     .speaker-slide small {
-        font-size: 0.65rem;
+        font-size: 0.8rem;
+        line-height: 1.35;
     }
 }
 
