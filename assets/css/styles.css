@@ -568,7 +568,7 @@ img.nav-logo,
     z-index: 2;
     padding: 1rem 1rem 1.25rem;
     border-block: 1px solid rgba(107, 33, 168, 0.18);
-    background: #fff;
+    background: linear-gradient(135deg, #f3e8ff 0%, #ede9fe 48%, #e0f2fe 100%);
     color: var(--primary-purple-dark);
 }
 
