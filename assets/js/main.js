@@ -209,6 +209,66 @@ document.addEventListener('DOMContentLoaded', function() {
         
         statsObserver.observe(statsSection);
     }
+
+    // ===============================================
+    // SPEAKER CAROUSEL
+    // ===============================================
+
+    const speakerCarousel = document.querySelector('.speaker-carousel');
+    const speakerTrack = document.querySelector('.speaker-carousel-track');
+
+    if (speakerCarousel && speakerTrack) {
+        const speakerSlides = Array.from(speakerTrack.querySelectorAll('.speaker-slide'));
+        const speakerDots = document.querySelector('.speaker-carousel-dots');
+        const speakerButtons = speakerCarousel.querySelectorAll('[data-carousel-direction]');
+        let currentSpeaker = 0;
+        let carouselTimer;
+
+        const showSpeaker = (index) => {
+            currentSpeaker = (index + speakerSlides.length) % speakerSlides.length;
+            speakerTrack.style.transform = `translateX(-${currentSpeaker * 100}%)`;
+            speakerDots.querySelectorAll('.speaker-carousel-dot').forEach((dot, dotIndex) => {
+                dot.classList.toggle('is-active', dotIndex === currentSpeaker);
+                dot.setAttribute('aria-current', dotIndex === currentSpeaker ? 'true' : 'false');
+            });
+        };
+
+        speakerSlides.forEach((slide, slideIndex) => {
+            const dot = document.createElement('button');
+            dot.type = 'button';
+            dot.className = 'speaker-carousel-dot';
+            dot.setAttribute('aria-label', `Show speaker ${slideIndex + 1}`);
+            dot.addEventListener('click', () => {
+                showSpeaker(slideIndex);
+                restartCarousel();
+            });
+            speakerDots.appendChild(dot);
+        });
+
+        speakerButtons.forEach((button) => {
+            button.addEventListener('click', () => {
+                showSpeaker(currentSpeaker + Number(button.dataset.carouselDirection));
+                restartCarousel();
+            });
+        });
+
+        const restartCarousel = () => {
+            window.clearInterval(carouselTimer);
+            carouselTimer = window.setInterval(() => showSpeaker(currentSpeaker + 1), 6000);
+        };
+
+        speakerCarousel.addEventListener('mouseenter', () => window.clearInterval(carouselTimer));
+        speakerCarousel.addEventListener('mouseleave', restartCarousel);
+        speakerCarousel.addEventListener('focusin', () => window.clearInterval(carouselTimer));
+        speakerCarousel.addEventListener('focusout', (event) => {
+            if (!speakerCarousel.contains(event.relatedTarget)) {
+                restartCarousel();
+            }
+        });
+
+        showSpeaker(0);
+        restartCarousel();
+    }
     
     // ===============================================
     // PARALLAX EFFECT (Hero Section)
