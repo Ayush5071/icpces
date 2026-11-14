@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Overall Program Schedule - ICPCES 2026</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        body { padding-top: 70px; background: #faf5ff; }
+        .schedule-page { max-width: 1180px; margin: 0 auto; padding: 2rem 1.5rem 4rem; }
+        .schedule-header { text-align: center; margin-bottom: 1.5rem; }
+        .schedule-header h1 { color: #6b21a8; font-family: 'Playfair Display', serif; }
+        .schedule-viewer { background: #fff; border: 1px solid #e4e4e7; box-shadow: 0 10px 30px rgba(107, 33, 168, 0.12); }
+        .schedule-viewer embed { display: block; width: 100%; height: 78vh; min-height: 620px; border: 0; }
+        .schedule-link { display: inline-block; margin-top: 1rem; color: #6b21a8; font-weight: 600; text-decoration: underline; }
+    </style>
+</head>
+<body>
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <a href="../index.html" class="nav-logo"><img src="../assets/images/logo.png" alt="ICPCES Logo"><span class="logo-text">ICPCES<span class="logo-year">2026</span></span></a>
+            <ul class="nav-menu" id="navMenu">
+                <li><a href="../index.html#home" class="nav-link">Home</a></li>
+                <li><a href="overall-program.html" class="nav-link active">Overall Program</a></li>
+                <li><a href="technical-program.html" class="nav-link">Technical Schedule</a></li>
+                <li><a href="../registration.html" class="nav-btn">Register Now</a></li>
+            </ul>
+            <button class="mobile-toggle" id="mobileToggle" aria-label="Toggle menu"><span></span><span></span><span></span></button>
+        </div>
+    </nav>
+    <main class="schedule-page">
+        <header class="schedule-header">
+            <h1>Overall Program Schedule</h1>
+            <p>Official conference programme</p>
+        </header>
+        <div class="schedule-viewer">
+            <embed src="../assets/public/ICPCES-2026-Overall Programme.pdf" type="application/pdf" title="ICPCES 2026 Overall Program Schedule">
+        </div>
+        <a class="schedule-link" href="../assets/public/ICPCES-2026-Overall Programme.pdf" target="_blank" rel="noopener">Open the official programme PDF</a>
+    </main>
+    <script src="../assets/js/main.js"></script>
+</body>
+</html>

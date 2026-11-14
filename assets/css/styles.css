@@ -508,7 +508,8 @@ img.nav-logo,
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: 2rem;
+    gap: 1.25rem;
+    flex-wrap: wrap;
     margin-bottom: 2rem;
 }
 
@@ -533,6 +534,61 @@ img.nav-logo,
 
 .hero-logo.anrf-logo {
     height: 80px;
+}
+
+.hero-logo.ark-logo {
+    height: 80px;
+    max-width: 150px;
+    object-fit: contain;
+}
+
+.sponsor-logo-group {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    flex-shrink: 0;
+}
+
+.sponsor-logo-group span {
+    display: block;
+    width: 180px;
+    padding: 0.55rem 0.7rem;
+    border: 1px solid rgba(255, 255, 255, 0.35);
+    border-radius: 0.45rem;
+    background: rgba(30, 27, 75, 0.72);
+    color: #fff7c2;
+    font-size: 0.7rem;
+    font-weight: 700;
+    line-height: 1.35;
+    text-align: left;
+}
+
+.keynote-ticker {
+    position: relative;
+    z-index: 2;
+    overflow: hidden;
+    border-block: 1px solid rgba(107, 33, 168, 0.18);
+    background: #fff7ed;
+    color: var(--primary-purple-dark);
+}
+
+.keynote-ticker-track {
+    display: inline-flex;
+    gap: 3rem;
+    min-width: max-content;
+    padding: 0.8rem 0;
+    animation: keynote-ticker-scroll 42s linear infinite;
+}
+
+.keynote-ticker-track span {
+    font-size: 0.9rem;
+    font-weight: 600;
+    white-space: nowrap;
+}
+
+@keyframes keynote-ticker-scroll {
+    from { transform: translateX(0); }
+    to { transform: translateX(-50%); }
 }
 
 .springer-logo {
@@ -741,6 +797,16 @@ img.nav-logo,
     }
     .hero-logo.ieee-logo {
         height: 60px;
+    }
+
+    .hero-logo.ark-logo {
+        height: 60px;
+        max-width: 115px;
+    }
+
+    .sponsor-logo-group span {
+        width: 145px;
+        font-size: 0.62rem;
     }
     
     .springer-logo {
